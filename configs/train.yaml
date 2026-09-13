@@ -1,0 +1,49 @@
+experiment:
+  name: miniclip_resnet18_v1
+  seed: 42
+
+dataset:
+  root: data/flickr30k
+  image_dir: images
+  captions_file: captions.csv
+
+  image_size: 224
+  max_text_length: 40
+  vocab_size: 20000
+
+  train_ratio: 0.90
+  val_ratio: 0.05
+
+model:
+  vision_encoder: resnet18
+
+  image_feature_dim: 512
+  text_feature_dim: 512
+
+  embed_dim: 256
+
+  text:
+    hidden_dim: 512
+    num_layers: 4
+    num_heads: 8
+    ff_dim: 2048
+    dropout: 0.1
+
+  temperature: 0.07
+  learnable_temperature: true
+
+train:
+  batch_size: 128
+  epochs: 30
+
+  lr: 0.0001
+  weight_decay: 0.01
+
+  num_workers: 8
+
+  amp: true
+
+  save_dir: checkpoints
+
+eval:
+  batch_size: 128
