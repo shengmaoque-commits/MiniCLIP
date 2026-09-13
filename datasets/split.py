@@ -7,7 +7,7 @@ def split_dataframe(
     val_ratio=0.05,
     seed=42
 ):
-    unique_images = dataframe["image"].unique()
+    unique_images = dataframe["image_name"].unique()
     # random number generator
     rng = np.random.default_rng(seed)
 
@@ -34,15 +34,15 @@ def split_dataframe(
     ]
 
     train_df = dataframe[
-        dataframe["image"].isin(train_images)
+        dataframe["image_name"].isin(train_images)
     ].reset_index(drop=True)
 
     val_df = dataframe[
-        dataframe["image"].isin(val_images)
+        dataframe["image_name"].isin(val_images)
     ].reset_index(drop=True)
 
     test_df = dataframe[
-        dataframe["image"].isin(test_images)
+        dataframe["image_name"].isin(test_images)
     ].reset_index(drop=True)
 
     return train_df, val_df, test_df

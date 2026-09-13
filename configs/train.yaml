@@ -3,13 +3,11 @@ experiment:
   seed: 42
 
 dataset:
-  root: data/flickr30k
-  image_dir: images
-  captions_file: captions.csv
-
+  root: data/Images
+  image_dir: flickr30k_images
+  captions_file: results.csv
   image_size: 224
   max_text_length: 40
-
   train_ratio: 0.90
   val_ratio: 0.05
 

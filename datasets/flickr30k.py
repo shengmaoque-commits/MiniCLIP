@@ -25,7 +25,7 @@ class Flickr30KDataset(Dataset):
         self.random_caption = random_caption
 
         # 按图片分组
-        grouped = dataframe.groupby("image")["caption"].apply(list)
+        grouped = dataframe.groupby("image_name")["comment"].apply(list)
 
         self.image_names = list(grouped.index)
 

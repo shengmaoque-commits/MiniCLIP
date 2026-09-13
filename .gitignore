@@ -1,0 +1,126 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# =========================
+# Virtual environments
+# =========================
+.venv/
+venv/
+env/
+ENV/
+miniclip/
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Dataset
+# 数据集一般不要上传 GitHub
+# =========================
+data/
+datasets/data/
+*.zip
+
+# 如果你想保留 data 文件夹本身，可以使用 .gitkeep
+# !data/.gitkeep
+
+# =========================
+# Model checkpoints
+# =========================
+checkpoints/
+*.pth
+*.pt
+*.ckpt
+*.bin
+
+# =========================
+# Training outputs
+# =========================
+runs/
+outputs/
+output/
+results/
+logs/
+log/
+
+# =========================
+# Experiment tracking
+# =========================
+wandb/
+mlruns/
+
+# =========================
+# TensorBoard
+# =========================
+events.out.tfevents.*
+tensorboard/
+
+# =========================
+# Generated vocabulary / cache
+# =========================
+vocab.json
+*.pkl
+*.pickle
+*.cache
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.log
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# PyTorch / Torch extensions
+# =========================
+torch_extensions/
+
+# =========================
+# Build / packaging
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# =========================
+# pytest / coverage
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Kaggle credentials
+# 千万不要上传
+# =========================
+kaggle.json
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
+*.key
+*.pem

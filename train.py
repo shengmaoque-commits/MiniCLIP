@@ -57,8 +57,13 @@ def build_dataloaders(
         dataset_cfg["image_dir"]
     )
 
+    # dataframe = pd.read_csv(
+    #     csv_path
+    # )
     dataframe = pd.read_csv(
-        csv_path
+        csv_path,
+        sep="|",
+        skipinitialspace=True
     )
 
     train_df, val_df, test_df = split_dataframe(
@@ -70,17 +75,17 @@ def build_dataloaders(
 
     print(
         f"Train images: "
-        f"{train_df['image'].nunique()}"
+        f"{train_df['image_name'].nunique()}"
     )
 
     print(
         f"Val images: "
-        f"{val_df['image'].nunique()}"
+        f"{val_df['image_name'].nunique()}"
     )
 
     print(
         f"Test images: "
-        f"{test_df['image'].nunique()}"
+        f"{test_df['image_name'].nunique()}"
     )
 
     image_size = dataset_cfg["image_size"]
