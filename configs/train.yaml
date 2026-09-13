@@ -9,7 +9,6 @@ dataset:
 
   image_size: 224
   max_text_length: 40
-  vocab_size: 20000
 
   train_ratio: 0.90
   val_ratio: 0.05
@@ -17,10 +16,13 @@ dataset:
 model:
   vision_encoder: resnet18
 
+  pretrained_vision: false
+
   image_feature_dim: 512
-  text_feature_dim: 512
 
   embed_dim: 256
+
+  temperature: 0.07
 
   text:
     hidden_dim: 512
@@ -29,19 +31,20 @@ model:
     ff_dim: 2048
     dropout: 0.1
 
-  temperature: 0.07
-  learnable_temperature: true
-
 train:
   batch_size: 128
+
   epochs: 30
 
   lr: 0.0001
+
   weight_decay: 0.01
 
   num_workers: 8
 
   amp: true
+
+  grad_clip: 1.0
 
   save_dir: checkpoints
 
